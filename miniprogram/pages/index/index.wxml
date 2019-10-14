@@ -1,0 +1,129 @@
+<view class="center">
+  <!-- 轮播图 -->
+  <view class='banner'>
+    <!-- 顶部搜索 -->
+    <view class='topbar'>
+      <view class='place'>
+        <text>青岛</text>
+        <image src='http://pin.lanhaihui.net/public/wx_mini/images//b.png'></image>
+      </view>
+      <view class='search'>
+        <image src='http://pin.lanhaihui.net/public/wx_mini/images//sousuo.png'></image>
+        <input placeholder='请输入商家名、活动名商圈...'></input>
+      </view>
+    </view>
+    <view class='clear'></view>
+    <!-- 轮播图 -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}" indicator-color="{{indicatorColor}}" class='ban'>
+      <block wx:for="{{imgUrls}}" wx:key="image">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 轮播图下分类 -->
+  <view class='div'>
+    <view class='ul'>
+      <view class='li' wx:for-items="{{type}}" wx:key="item.id">
+        <navigator url='../recommend/recommend' hover-class="none">
+          <image src='{{item.img_show}}' class='img'></image>
+          <text>{{item.name}}</text>
+        </navigator>
+      </view>
+    </view>
+    
+    <view class='ul'>
+      <view class='li' wx:for-items="{{type}}" wx:key="item.id">
+        <navigator url='../recommend/recommend' hover-class="none">
+          <image src='{{item.img_show}}' class='img'></image>
+          <text>{{item.name}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='clear'></view>
+
+  <!-- 任务模式 -->
+  <navigator url='../youhuiquan/youhuiquan' hover-class='none'>
+    <view class='task'>
+      <image src='http://pin.lanhaihui.net/public/wx_mini/images//huodong.png'></image>
+    </view>
+  </navigator>
+
+  <!-- 本周福利 -->
+  <view class='play'>
+    <text class='play_left'>本周福利</text>
+    <image src='http://pin.lanhaihui.net/public/wx_mini/images//huo.png' class='img'></image>
+    <image src='http://pin.lanhaihui.net/public/wx_mini/images//r.png' class='ri'></image>
+    <text class='play_right'>更多</text>
+  </view>
+  <view class='clear'></view>
+  <!-- 北京 -->
+  <view class='beijing'>
+    <view class='left' wx:for='{{left_list}}'>
+      <view class='left_list' data-id='{{item.id}}'>
+        <image src='{{item.preview_img}}'></image>
+        <view class='mask'>
+          <view class='money'>{{item.price}}元起</view>
+          <view class='wenben'>
+            <text class='didian'>{{item.didian}}</text>
+            <view class='rich'>
+              <rich-text>{{item.title}}</rich-text>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+    <view class="right" wx:for='{{inform}}'>
+      <view class='inform' data-id='{{item.id}}'>
+        <text>{{item.tit}}</text>
+        <image src='{{item.img}}' class='hot'></image>
+      </view>
+    </view>
+  </view>
+  <view class='clear'></view>
+  
+  <!-- 超级拼团 -->
+    <view class='play'>
+    <text class='play_left'>超级拼团</text>
+    <image src='http://pin.lanhaihui.net/public/wx_mini/images//huo.png' class='img'></image>
+    <image src='http://pin.lanhaihui.net/public/wx_mini/images//r.png' class='ri'></image>
+    <text class='play_right'>更多</text>
+  </view>
+  <view class='clear'></view>
+  <!-- 北京 -->
+  <view class='beijing'>
+    <view class='left' wx:for='{{left_list}}'>
+      <view class='left_list' data-id='{{item.id}}'>
+        <image src='{{item.preview_img}}'></image>
+        <view class='mask'>
+          <view class='money'>{{item.price}}元起</view>
+          <view class='wenben'>
+            <text class='didian'>{{item.didian}}</text>
+            <view class='rich'>
+              <rich-text>{{item.title}}</rich-text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="right" wx:for='{{inform}}'>
+      <view class='inform' data-id='{{item.id}}'>
+        <text>{{item.tit}}</text>
+        <image src='{{item.img}}' class='hot'></image>
+      </view>
+    </view>
+  </view>
+  <view class='clear'></view>
+  <!-- 查看更多 -->
+  <!-- <view class='more'>
+    <text>点击加载更多</text>
+  </view> -->
+  <!-- 返回顶部 -->
+  <view class='go_top' bindtap="goTop" hidden='{{!floorstatus}}'>
+    <image src='../../images/goTop.png'></image>
+  </view>
+</view>

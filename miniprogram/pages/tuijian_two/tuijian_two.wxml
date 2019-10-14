@@ -1,0 +1,56 @@
+<view class='center'>
+    <!-- 顶部搜索 -->
+    <view class='top'>
+        <view class='place'>
+            <image src='http://pin.lanhaihui.net/public/wx_mini/images//map.png'></image>
+            <text>青岛</text>
+        </view>
+        <view class='search'>
+            <image src='http://pin.lanhaihui.net/public/wx_mini/images//sousuo.png'></image>
+            <input placeholder='请搜索目的地或者关键字'></input>
+        </view>
+    </view>
+    <view class='clear'></view>
+    <!-- 筛选 -->
+    <view class='shai'>
+        <view class='list' wx:for="{{type}}" wx:key="item.id">
+            <view class='type' data-id='{{item.id}}'>
+                <view class='li'>{{item.typelist}}</view>
+            </view>
+        </view>
+        <view class='btn'>
+            <image src='http://pin.lanhaihui.net/public/wx_mini/images//shai.png'></image>
+            <text>筛选</text>
+        </view>
+    </view>
+    <!-- 列表 -->
+    <view class='list_show'>
+        <view class='li' wx:for="{{inform}}" wx:key="item.id">
+            <view class='inform' data-id='{{item.id}}'>
+                <view class='img'>
+                    <image src='{{item.img}}'></image>
+                    <view class='tag'>{{item.tag}}</view>
+                    <view class='title'>{{item.tit}}</view>
+                </view>
+                <view class='con'>
+                    <view class='desc'>{{item.desc}}</view>
+                    <view class='fenshu'>
+                        <text class='mark'>{{item.mark}}分</text>
+                        <text class='quota'>剩余{{item.quota}}个名额</text>
+                    </view>
+                    <view class='bb'>
+                        <text class='num'>{{item.num}}</text>
+                    </view>
+                    <view class='aa'>
+                        <view class='cc'>
+                            <text class='time'>{{item.time}}</text>
+                            后结束
+                        </view>
+                        <text class='qian'>{{item.qian}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='clear'></view>
+</view>

@@ -1,0 +1,71 @@
+<view class='center'>
+  <view class='list'>
+    <view class='top'>
+      <view class='li'>
+        <text>旅客姓名</text>
+        <input placeholder='请输入您的姓名'></input>
+      </view>
+      <view class='li'>
+        <text>中文姓名</text>
+        <input placeholder='请输入您的中文姓名'></input>
+      </view>
+      <view class='li'>
+        <text>拼音姓</text>
+        <input placeholder='请输入您的拼音姓'></input>
+      </view>
+      <view class='li' style='border-bottom:none;'>
+        <text>拼音名</text>
+        <input placeholder='请输入您的拼音名'></input>
+      </view>
+    </view>
+    <!-- 第二块 -->
+    <view class='top'>
+      <view class='li'>
+        <text>证件类型</text>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">{{array[index]}}
+        </picker>
+        <image src='http://pin.lanhaihui.net/public/wx_mini/images//ri.png'></image>
+      </view>
+      <view class='li'>
+        <text>证件号码</text>
+        <input placeholder='请输入您的证件号码'></input>
+      </view>
+      <view class='li' style='border-bottom:none;'>
+        <text>国籍</text>
+        <picker bindchange="bindPickerChange" value="{{countryindex}}" range="{{country}}">{{country[countryindex]}}
+        </picker>
+        <image src='http://pin.lanhaihui.net/public/wx_mini/images//ri.png'></image>
+      </view>
+    </view>
+    <!-- 第三块 -->
+    <view class='top'>
+      <view class='li'>
+        <text>性别</text>
+        <picker bindchange="bindPickerChange" value="{{sexindex}}" range="{{sex}}">{{sex[sexindex]}}
+        </picker>
+        <image src='http://pin.lanhaihui.net/public/wx_mini/images//ri.png'></image>
+      </view>
+      <view class='li'>
+        <text>出生日期</text>
+        <input placeholder='请输入您的出生日期'></input>
+      </view>
+      <view class='li'>
+        <text>客户类型</text>
+        <picker bindchange="bindPickerChange" value="{{kehuindex}}" range="{{kehu}}">{{kehu[kehuindex]}}
+        </picker>
+        <image src='http://pin.lanhaihui.net/public/wx_mini/images//ri.png'></image>
+      </view>
+      <view class='li' style='border-bottom:none;'>
+        <text>手机号码</text>
+        <input placeholder='请输入您的手机号码'></input>
+      </view>
+    </view>
+  </view>
+  <view class='text'>
+    为了让你在旅途不在寂寞，我为你准备了一个百宝箱，里面装着愉悦，甜蜜，幸福，以我对你的祝福。祝你平安出行，旅途愉快。
+  </view>
+  <!-- 保存按钮 -->
+  <view class='btn'>
+    <text>保存</text>
+  </view>
+</view>

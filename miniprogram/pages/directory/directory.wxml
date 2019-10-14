@@ -1,0 +1,148 @@
+<view class='center'>
+  <!-- 顶部搜索 -->
+  <view class='top'>
+    <view class='place'>
+      <image src='http://pin.lanhaihui.net/public/wx_mini/images//map.png'></image>
+      <text>青岛青岛</text>
+    </view>
+    <view class='search'>
+      <image src='http://pin.lanhaihui.net/public/wx_mini/images//sousuo.png'></image>
+      <input placeholder='请搜索目的地或者关键字'></input>
+    </view>
+  </view>
+  <view class='clear'></view>
+  <!-- tab按钮 -->
+  <view class='swiper-tab'>
+    <view class='tab'>
+      <view class="{{selected?'active':'default'}} bbb" bindtap="selected">玩哪里</view>
+      <view class="{{selected1?'active':'default'}} bbb" bindtap="selected1">吃哪里</view>
+      <view class="{{selected2?'active':'default'}} bbb" bindtap="selected2">买什么</view>
+      <view class="{{selected3?'active':'default'}} bbb" bindtap="selected3">游记</view>
+    </view>
+  </view>
+  <view class='clear'></view>
+  <!-- 玩哪里 -->
+  <view class="{{selected?'show':'hidden'}}">
+    <view class='list'>
+      <!-- 分类标签 -->
+      <view class='tag'>
+        <view class='hot'>热门</view>
+        <block wx:for="{{taglist}}" wx:key="item.id">
+          <view class='li' data-id='{{item.id}}'>{{item.li}}</view>
+        </block>
+      </view>
+      <!-- 列表 -->
+      <block wx:for="{{mes_list}}" wx:key="item.id">
+        <view class='listshow' data-id='{{item.id}}'>
+          <image src='{{item.img}}'></image>
+          <view class='mask'>
+            <view class='con'>
+              <view class='title'>{{item.title}}</view>
+              <text class='tit'>{{item.tit}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 吃哪里 -->
+  <view class="{{selected1?'show':'hidden'}}">
+    <view class='list'>
+      <!-- 分类标签 -->
+      <view class='tag'>
+        <view class='hot'>热门</view>
+        <block wx:for="{{eatlist}}" wx:key="item.id">
+          <view class='li' data-id='{{item.id}}'>{{item.li}}</view>
+        </block>
+      </view>
+      <!-- 列表 -->
+      <block wx:for="{{eat_list}}" wx:key="item.id">
+        <view class='listshow' data-id='{{item.id}}'>
+          <image src='{{item.img}}'></image>
+          <view class='mask'>
+            <view class='con'>
+              <view class='title'>{{item.title}}</view>
+              <text class='tit'>{{item.tit}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 买什么 -->
+  <view class="{{selected2?'show':'hidden'}}">
+    <view class='list'>
+      <!-- 分类标签 -->
+      <view class='tag'>
+        <view class='hot'>热门</view>
+        <block wx:for="{{buylist}}" wx:key="item.id">
+          <view class='li' data-id='{{item.id}}'>{{item.li}}</view>
+        </block>
+      </view>
+      <!-- 列表 -->
+      <block wx:for="{{buy_list}}" wx:key="item.id">
+        <view class='listshow' data-id='{{item.id}}'>
+          <image src='{{item.img}}'></image>
+          <view class='mask'>
+            <view class='con'>
+              <view class='title'>{{item.title}}</view>
+              <text class='tit'>{{item.tit}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 游记 -->
+  <view class="{{selected3?'show':'hidden'}}">
+    <view class="content">
+      <view class="left">
+        <block wx:for="{{note}}" wx:key="">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+        </block>
+      </view>
+      <view class="right">
+        <block wx:for="{{note}}" wx:key="">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+        </block>
+      </view>
+    </view>
+    <!--  下面是一个模块 -->
+    <template name="item">
+      <view class="item">
+        <image class="item-img" src="{{url}}" mode="widthFix"></image>
+        <view class="item-title-box">
+          <text class="item-title">{{title}}</text>
+          <!-- <image class="arrow" src="../../image/arrow.png"></image>   -->
+        </view>
+        <view class="name">
+          <image class="item-ava" src="{{avatar}}"></image>
+          <view class='donghua'>
+            <text class="name-title">{{name}}</text>
+            <text class='time'>{{time}}小时前</text>
+          </view>
+          <view class="heart_">
+            <image class="heart" src="http://pin.lanhaihui.net/public/wx_mini/images/heart.png"></image>
+            <view class='clear'></view>
+            <text>{{heart_num}}</text>
+          </view>
+        </view>
+      </view>
+    </template>
+    <!-- 添加按钮 -->
+    <view class='button'>
+      <view class='btn' bindtap='add_btn' style='display:{{a1}}'>
+        <image src='http://pin.lanhaihui.net/public/wx_mini/images//add_btn.png'></image>
+      </view>
+      <!-- 遮罩层 -->
+      <view class='mark' style='display:{{b1}}'>
+        <view class='btn2' style='display:{{b1}}'>
+          <text class='names'>旅行游记</text>
+          <image src='http://pin.lanhaihui.net/public/wx_mini/images//biji.png' class='img2'></image>
+          <image src='http://pin.lanhaihui.net/public/wx_mini/images//close.png' class='img1' bindtap='close_btn'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='clear'></view>
+</view>

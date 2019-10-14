@@ -1,0 +1,54 @@
+<view class='center'>
+  <!-- tab切换 -->
+  <view class='swiper-tab'>
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">收藏</view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">浏览历史</view>
+  </view>
+  <view class='clear'></view>
+  <!-- 内容展示 -->
+  <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+    <swiper-item>
+      <view class='list_show'>
+        <view class='li' wx:for="{{inform}}" wx:key="item.id">
+          <view class='inform' data-id='{{item.id}}'>
+            <view class='img'>
+              <image src='{{item.img}}'></image>
+              <view class='tag'>{{item.tag}}</view>
+              <view class='title'>{{item.tit}}</view>
+            </view>
+            <view class='con'>
+              <view class='desc'>{{item.desc}}</view>
+              <view class='num'>{{item.num}}</view>
+              <view class='qian'>{{item.qian}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='no'>亲，没有更多咯… </view>
+      <view class='clear'></view>
+    </swiper-item>
+    <swiper-item>
+      <view class='list_show'>
+        <view class='history_list' wx:for="{{history}}" wx:key="item.id">
+          <view class='history' data-id='{{item.id}}'>
+            <view class='date'>{{item.date}}</view>
+            <view class='li'>
+              <view class='img'>
+                <image src='{{item.img}}'></image>
+                <view class='tag'>{{item.tag}}</view>
+                <view class='title'>{{item.tit}}</view>
+              </view>
+              <view class='con'>
+                <view class='desc'>{{item.desc}}</view>
+                <view class='num'>{{item.num}}</view>
+                <view class='qian'>{{item.qian}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='clear'></view>
+    </swiper-item>
+  </swiper>
+  <view class='clear'></view>
+</view>

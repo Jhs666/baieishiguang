@@ -1,0 +1,65 @@
+<view class='center'>
+  <!-- tab按钮 -->
+  <view class='swiper-tab'>
+    <view class='tab'>
+      <view class="{{selected?'active':'default'}} bbb" bindtap="selected">全部</view>
+      <view class="{{selected1?'active':'default'}} bbb" bindtap="selected1">待出行</view>
+      <view class="{{selected2?'active':'default'}} bbb" bindtap="selected2">待付款</view>
+      <view class="{{selected3?'active':'default'}} bbb" bindtap="selected3">待点评</view>
+      <view class="{{selected4?'active':'default'}} bbb" bindtap="selected4">退款/售后</view>
+    </view>
+  </view>
+  <view class='clear'></view>
+  <view class="{{selected?'show':'hidden'}}">
+    <block wx:for="{{all_order}}" wx:key="item.id">
+      <view class='all_order' data-id='{{item.id}}'>
+        <view class='wrapper1'>
+          <view class='beijing'>
+            <image src='http://pin.lanhaihui.net/public/wx_mini/images/yi.png' class='bg'></image>
+          </view>
+          <view class='content'>
+            <view class='title1'>{{item.item_title}}</view>
+            <text class='play_date1'>游玩时间：{{item.update_time}}</text>
+            <rich-text class='date1'>预定日期：{{item.create_time}}</rich-text>
+          </view>
+          <view class='tip'>
+            <view class='label1'>
+              <text class='result1'>{{item.order_pay_status}}</text>
+            </view>
+            <view class='money1'>{{item.commodity_price}}</view>
+            <view class='btn1'>查看</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 待出行 -->
+  <view class="{{selected1?'show':'hidden'}}">
+    <view class='kong'>
+      <image src='http://pin.lanhaihui.net/public/wx_mini/images//kong.png'></image>
+      <text>回禀小主，这里没有发现你的待出行订单~</text>
+    </view>
+  </view>
+  <!-- 待付款 -->
+  <view class="{{selected2?'show':'hidden'}}">
+    <view class='kong'>
+      <image src='http://pin.lanhaihui.net/public/wx_mini/images//kong.png'></image>
+      <text>回禀小主，这里没有发现你的待付款订单~</text>
+    </view>
+  </view>
+  <!-- 待点评 -->
+  <view class="{{selected3?'show':'hidden'}}">
+    <view class='kong'>
+      <image src='http://pin.lanhaihui.net/public/wx_mini/images//kong.png'></image>
+      <text>回禀小主，这里没有发现你的待点评订单~</text>
+    </view>
+  </view>
+  <!-- 退款 -->
+  <view class="{{selected4?'show':'hidden'}}">
+    <view class='kong'>
+      <image src='http://pin.lanhaihui.net/public/wx_mini/images//kong.png'></image>
+      <text>回禀小主，这里没有发现你的退款订单~</text>
+    </view>
+  </view>
+  <view class='clear'></view>
+</view>

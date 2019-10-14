@@ -1,0 +1,14 @@
+<view class="container">
+  <block  wx:for="{{carts}}"  wx:key="key">
+    <view class='carts'>
+      <text class='name'>{{item.title}}</text>
+      <view class='subadd'>
+        <text class='sub' data-index="{{index}}" bindtap='sub'>-</text>
+        <text class='num'>{{item.num}}</text>
+        <text class='add' data-index="{{index}}" bindtap='add'>+</text>
+      </view>
+      <text class='deleted' bindtap="deleteList" data-index="{{index}}">X</text>
+    </view>
+  </block>
+  <view>总价：{{totalPrice}}</view>
+</view>

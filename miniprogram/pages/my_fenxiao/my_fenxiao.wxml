@@ -1,0 +1,95 @@
+<view class='center'>
+    <!-- 顶部 -->
+    <view class='top'>
+    <view class='back'>
+        <view class='shezhi'>
+            <image src='http://pin.lanhaihui.net/public/wx_mini/images//shezhi.png'></image>
+        </view>
+        <navigator url='../message/message'>
+            <view class='xiaoxi'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//xiaoxi.png'></image>
+            </view>
+        </navigator>
+        <view class='user'>
+            <view class='fenxiao'>
+                <text class='h1'>我的分销</text>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//help.png'></image>
+                <text class='rule'>规则说明</text>
+            </view>
+            <text class='pro'>分销产品</text>
+            <view class='line'></view>
+            <view class='ul'>
+                <view class='li'>
+                        <text>32</text>
+                        <rich-text>团队人数（人）</rich-text>
+                </view>
+                <view class='li'>
+                        <text>8000</text>
+                        <rich-text>团队业绩（元）</rich-text>
+                </view>
+                <view class='li' style='border-right:none;'>
+                        <text>3</text>
+                        <rich-text>分销产品</rich-text>
+                </view>
+            </view>
+        </view>
+    </view>
+    </view>
+    <view class='clear'></view>
+
+    <!-- 我的订单 -->
+    <view class='goods'>
+        <text class='title'>我的订单</text>
+        <view class='ul'>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//all.png'></image>
+                <text class='small'>全部订单</text>
+            </view>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//dai.png'></image>
+                <text class='small'>待出行</text>
+            </view>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//fu.png'></image>
+                <text class='small'>代付款</text>
+            </view>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//ping.png'></image>
+                <text class='small'>待点评</text>
+            </view>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//hou.png'></image>
+                <text class='small'>退款/售后</text>
+            </view>
+        </view>
+    </view>
+    <view class='clear'></view>
+
+    <!-- 常用工具 -->
+    <view class='tool'>
+        <text class='title'>常用工具</text>
+        <view class='ul'>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//ewm.png'></image>
+                <text class='small'>分享有礼</text>
+            </view>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//you.png'></image>
+                <text class='small'>优惠券</text>
+            </view>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//zuan.png'></image>
+                <text class='small'>积分</text>
+            </view>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//cang.png'></image>
+                <text class='small'>收藏</text>
+            </view>
+            <view class='li'>
+                <image src='http://pin.lanhaihui.net/public/wx_mini/images//history.png'></image>
+                <text class='small'>浏览历史</text>
+            </view>
+        </view>
+    </view>
+    <view class='clear'></view>
+</view>
